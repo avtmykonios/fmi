@@ -85,16 +85,16 @@ class IndexController extends AbstractActionController
 		$messages = null;
 
 		$request = $this->getRequest();
-        if ($request->isPost()) {
-            //- $authFormFilters = new User(); // we use the Entity for the filters
-			// TODO fix the filters
-            //- $form->setInputFilter($authFormFilters->getInputFilter());
+	        if ($request->isPost()) {
+	            //- $authFormFilters = new User(); // we use the Entity for the filters
+		    // TODO fix the filters
+	            //- $form->setInputFilter($authFormFilters->getInputFilter());
 
 			// Filters have been fixed
 			$form->setInputFilter(new LoginFilter($this->getServiceLocator()));
-            $form->setData($request->getPost());
+            		$form->setData($request->getPost());
 			// echo "<h1>I am here1</h1>";
-            if ($form->isValid()) {
+            		if ($form->isValid()) {
 				$data = $form->getData();			
 				// $data = $this->getRequest()->getPost();
 				
